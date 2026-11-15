@@ -1,0 +1,25 @@
+Part 4 Questions: 
+
+1. What does a true positive mean in this phishing-detection project?
+    - A true positive occurs when a URL is actually phishing and the Decision Tree correctly predicts it as phishing. This means the model successfully identifies a phishing threat. 
+
+2. What does a false negative mean in this phishing-detection project?
+    - A false negative occurs when a URL is actually phishing, but the Decision Tree incorrectly predicts it as legitimate. This is dangerous because a malicious URL could go undetected. 
+
+Part 5 - Short Analysis (25 points)
+   
+Question 1: what is a Decision Tree? 
+- A Decision Tree is a supervised machine-learning algorithm that classifies data by following a series of feature-based decisions. Each internal node tests a feature, and each leaf gives a predicted class, such as legitimate or phishing. 
+
+Question 2: What does max_depth=5 control?
+- It limits the maximum number of splits along a path from the root to a leaf to five. This controls model complexity and can reduce overfitting, although the tree may stop growing earlier. 
+
+Question 3: Why might a very deep Decision Tree overfit the training data? 
+- A very deep tree can learn small details, noise, or unusual patterns specific to its training examples instead of general phishing characteristics. It may perform extremely well on training data but less accurately on new, unseen URLs. 
+
+Question 4: Which metric do you think is especially important for phishing detection? (Accuracy, Precision, Recall, F1-score)
+- Recall is especially important because it measures the porprtion of actual phishing URLs correctly detected. A low recall means more false negatives, allowing gdangerous phishing links to be classified as legitimate. Precision is also valuable for limiting false alarms, but detecting real threats is a priority. 
+
+
+Additional Model Evaluation Observation:
+- The Decision Tree acheived 100% accuracy, precission, recall, and F1-score on the test dataset. Additional validation (not included in the homework submission) showed that the model's performance was not caused by exact duplicate feature patterns between the training and testing sets. Feature importance analysis revealed that URLSimilarityIndex accounted for approximately 98.64% of the Decision Tree's feature importance. Although the model performed perfectly on this dataset, the strong relationship between this feature and the target labels suggests that further evaluation would be necessary to determine whether the model generalizes equally well to new phishing URLs. 
